@@ -1,0 +1,111 @@
+Lia tekee kaiken HTML-rakenteen, eli:
+Perusrakenne
+
+- Header + navigaatio 
+
+- Päänäkymä, jossa valitaan sukupolvi 
+
+- Hakukenttä 
+
+- Pokemon-lista
+
+- Modal / popup -ikkuna pokemonin yksityiskohtiin
+
+- Footer
+
+
+Josefina tekee kokonaan ulkoasun EDELLEEN niin että JS voi lisätä sisältöä.
+Tehtävät:
+
+- Responsiivinen layout (mobiili / desktop)
+
+- Navigaatio
+
+- Grid-listaus pokemon-kuville
+
+- Type-ikonien tyylit
+
+- Modal-ikkuna:
+
+- position: absolute / fixed
+
+- overlay + sulkunappi
+
+- Värit, fontit, spacing
+
+Zümra & Chioma – JavaScript (kaikki logiikka)
+
+jaaetaan JS-työt niin että meillä on yhtä paljon tekemistä.
+
+Zümran JavaScript-tehtävät:
+
+1. API-haku – sukupolven pokemon-listan lataus
+
+- Hae generation-data
+
+- Loop Pokémonien läpi
+
+- Yksi haku per Pokémon
+
+2. Pokemon-listan renderöinti HTML:ään
+
+- Luo cardit JS:llä:
+
+- nimi
+
+- kuva
+
+- type-iconit
+
+Lisää kuvalle ja nimelle onclick, joka avaa modalin.
+
+3. Hakutoiminto: nimellä & tyypillä
+
+- Suodata nykyisen sukupolven taulukosta:
+
+- name.includes(search)
+
+- types sisältää valitun tyypin
+
+Päivitä näkymä ilman uusia hakuja.
+
+
+Chioman JavaScript-tehtävät:
+
+1. Modal / popup -ikkuna
+
+Luo toiminta:
+
+- openModal(pokemon)
+
+- closeModal()
+
+Hae tarvittaessa lisätietoja:
+
+- height
+
+- weight
+
+- abilities
+
+- stats
+
+Lisää tiedot modalin sisään.
+
+2. Hakukentän ja suodattimien tapahtumakäsittelijät
+
+- Klikattaessa “search”, kutsu Zümran suodatusfunktiota
+
+- Dropdown generation vaihtaa näkymän
+
+- Tyypin filter (options → fire, water, etc.)
+
+3. Virheiden käsittely
+
+Jos data puuttuu:
+
+- kuva → placeholder
+
+- tyyppi → näytä vain mitä löytyy
+
+Käytä ?. optional chainingia.
