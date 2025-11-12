@@ -13,8 +13,15 @@ Perusrakenne
 
 - Footer
 
+Lia tekee myös vähän JavaScriptiä:
 
-Josefina tekee kokonaan ulkoasun EDELLEEN niin että JS voi lisätä sisältöä.
+- Dropdown (generation select) event listener
+
+- Search-napin event listener
+
+- Pieni visuaalinen toiminto (esim. navigaation avaus mobiilissa)
+
+Josefina tekee kokonaan ulkoasun edelleen niin että JS voi lisätä sisältöä.
 Tehtävät:
 
 - Responsiivinen layout (mobiili / desktop)
@@ -33,9 +40,7 @@ Tehtävät:
 
 - Värit, fontit, spacing
 
-Zümra & Chioma – JavaScript (kaikki logiikka)
-
-jaaetaan JS-työt niin että meillä on yhtä paljon tekemistä.
+Zümra, Chioma ja Lia – JavaScript
 
 Zümran JavaScript-tehtävät:
 
@@ -90,8 +95,6 @@ Hae tarvittaessa lisätietoja:
 
 - stats
 
-Lisää tiedot modalin sisään.
-
 2. Hakukentän ja suodattimien tapahtumakäsittelijät
 
 - Klikattaessa “search”, kutsu Zümran suodatusfunktiota
@@ -108,4 +111,4 @@ Jos data puuttuu:
 
 - tyyppi → näytä vain mitä löytyy
 
-Käytä ?. optional chainingia.
+- käytä ?. optional chainingia.
