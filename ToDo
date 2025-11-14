@@ -1,11 +1,11 @@
 Lia tekee kaiken HTML-rakenteen, eli:
 Perusrakenne
 
-- Header + navigaatio 
+- Header + navigaatio
 
-- Päänäkymä, jossa valitaan sukupolvi 
+- Päänäkymä, jossa valitaan sukupolvi
 
-- Hakukenttä 
+- Hakukenttä
 
 - Pokemon-lista
 
@@ -21,7 +21,8 @@ Lia tekee myös vähän JavaScriptiä:
 
 - Pieni visuaalinen toiminto (esim. navigaation avaus mobiilissa)
 
-Josefina tekee kokonaan ulkoasun edelleen niin että JS voi lisätä sisältöä.
+Josefina – CSS (KOKO UI)
+
 Tehtävät:
 
 - Responsiivinen layout (mobiili / desktop)
@@ -32,13 +33,25 @@ Tehtävät:
 
 - Type-ikonien tyylit
 
-- Modal-ikkuna:
+Modal-ikkunan ulkoasu:
 
-- position: absolute / fixed
+- position: fixed / centered
 
-- overlay + sulkunappi
+- Overlay + sulkunappi
 
-- Värit, fontit, spacing
+- Taustan blur, kun modal on auki
+
+- Animaatio (fade-in / scale) — jos ehtii
+
+Yleinen ulkoasu:
+
+- Värit
+
+- Fontit
+
+- Spacing
+
+- Nappien & hakukentän ulkoasu
 
 Zümra, Chioma ja Lia – JavaScript
 
@@ -66,41 +79,31 @@ Lisää kuvalle ja nimelle onclick, joka avaa modalin.
 
 3. Hakutoiminto: nimellä & tyypillä
 
-- Suodata nykyisen sukupolven taulukosta:
+Suodata nykyisen sukupolven taulukosta:
 
 - name.includes(search)
-
 - types sisältää valitun tyypin
 
 Päivitä näkymä ilman uusia hakuja.
-
 
 Chioman JavaScript-tehtävät:
 
 1. Modal / popup -ikkuna
 
-Luo toiminta:
-
 - openModal(pokemon)
-
 - closeModal()
 
-Hae tarvittaessa lisätietoja:
+Lisää modalin sisälle lisätietoja:
 
 - height
-
 - weight
-
 - abilities
-
 - stats
 
 2. Hakukentän ja suodattimien tapahtumakäsittelijät
 
 - Klikattaessa “search”, kutsu Zümran suodatusfunktiota
-
 - Dropdown generation vaihtaa näkymän
-
 - Tyypin filter (options → fire, water, etc.)
 
 3. Virheiden käsittely
@@ -108,7 +111,5 @@ Hae tarvittaessa lisätietoja:
 Jos data puuttuu:
 
 - kuva → placeholder
-
 - tyyppi → näytä vain mitä löytyy
-
-- käytä ?. optional chainingia.
+- käytä ?. optional chainingia
