@@ -113,3 +113,39 @@ Jos data puuttuu:
 - kuva → placeholder
 - tyyppi → näytä vain mitä löytyy
 - käytä ?. optional chainingia
+
+---
+
+JavaScript (4 files)
+
+api.js – Zümra
+
+- Fetch generation data
+- Fetch each Pokémon’s full info
+- Create Pokémon list `{ name, image, types }`
+- Export data for search & rendering
+
+---
+
+ender.js – Zümra
+
+- Render Pokémon cards
+- Show name, image, type icons
+- Add `onclick` to open modal
+- Re-render after filters
+
+---
+
+modal.js – Chioma
+
+- `openModal()` & `closeModal()`
+- Show height, weight, abilities, stats
+- Handle missing values safely (`?.`)
+
+---
+
+pokedex.js – Lia & Chioma
+
+- Handle UI events (search, dropdown, type filter)
+- Call API + render functions
+- Control app flow (initial generation load)
