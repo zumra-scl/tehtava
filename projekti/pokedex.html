@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> pokedex </title>
     <script type="module" src="./js/pokedex.js"></script>
 
-    <style></style>
+
+    <style>
+      .header {
+        padding: 2.5rem 1.25rem;
+        text-align: center-left;
+      }  
+      
+    </style>
+ 
+  </head>
+
+  <body>
+    <div class="grid">
+    <div class="grid-btn pokedex">pokedex</div>
+
+  </div>
+
+    <div class="header"
+    <h1>what pokemon are you looking for?</h1>
+  <div class="searchbox">
+    <input type="text" placeholder="search...">
     <div id="pokemon-container"></div>
     <input type="text" id="search-name" placeholder="Search by name" />
     <select id="search-type">
@@ -16,6 +36,10 @@
       <option value="water">Water</option>
     </select>
     <button id="search-btn">Search</button>
-  </head>
-  <body></body>
+
+   </div>
+  </div>
+
+
+  </body>
 </html>
