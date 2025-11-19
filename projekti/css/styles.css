@@ -40,7 +40,7 @@ body {
   border-radius: 999px;
 }
 
-#search-name {
+#searchInput {
   background-image: url("searchicon.png");
   background-repeat: no-repeat;
   background-position: 15px center;
@@ -48,10 +48,10 @@ body {
   padding-left: 45px;
 }
 
-#search-btn,
-#search-type,
+#closeModalBtn,
+#typeFilter,
 #searchBtn,
-#generation-select {
+#generationSelect {
   margin-top: 20px;
   border-radius: 999px;
   padding: 15px;
@@ -61,6 +61,34 @@ body {
   flex-direction: row;
   gap: 20px;
 }
+#pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-left: 300px;
+}
+#pokemon-list img {
+  width: 300px;
+  height: auto;
+}
+
+#pokemonModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+.modalCard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 2.5rem 1.25rem;
@@ -91,10 +119,10 @@ body {
     width: 300px;
     border-radius: 999px;
   }
-  #search-btn,
-  #search-type,
+  #closeModalBtn,
+  #typeFilter,
   #searchBtn,
-  #generation-select {
+  #generationSelect {
     margin-top: 20px;
     border-radius: 999px;
     padding: 10px;
@@ -103,5 +131,36 @@ body {
     display: flex;
     flex-direction: row;
     gap: 5px;
+  }
+  #pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 50px;
+  }
+  #pokemon-list img {
+    width: 250px;
+    height: auto;
+  }
+  #modalImage {
+    width: 50%;
+    height: 50%;
+  }
+
+  #pokemonModal {
+    position: fixed;
+    inset: o;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+  }
+  .modalCard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    height: auto;
   }
 }
