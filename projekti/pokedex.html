@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
 
-    <script type="module" src="./js/pokedex.js"></script>
-
     <style>
+      .header {
+        padding: 2.5rem 1.25rem;
+        text-align: left;
+      }
+
       .hidden {
         display: none;
       }
@@ -16,13 +19,9 @@
 
   <body>
     <div class="grid">
-      <div class="grid-btn pokedex"></div>
-
       <div class="header">
         <h1>What Pokemon are you looking for?</h1>
       </div>
-
-      <div id="pokemon-list"></div>
 
       <input type="text" id="searchInput" placeholder="Search by name" />
 
@@ -31,16 +30,16 @@
         <option value="grass">Grass</option>
         <option value="fire">Fire</option>
         <option value="water">Water</option>
+        <option value="electric">Electric</option>
         <option value="normal">Normal</option>
         <option value="bug">Bug</option>
+        <option value="psychic">Psychic</option>
         <option value="poison">Poison</option>
         <option value="dark">Dark</option>
-        <option value="psychic">Psychic</option>
         <option value="fairy">Fairy</option>
         <option value="fighting">Fighting</option>
         <option value="ghost">Ghost</option>
         <option value="dragon">Dragon</option>
-        <option value="electric">Electric</option>
         <option value="steel">Steel</option>
         <option value="rock">Rock</option>
         <option value="flying">Flying</option>
@@ -48,7 +47,7 @@
         <option value="ice">Ice</option>
       </select>
 
-      <select id="generation-select">
+      <select id="generationSelect">
         <option value="1">Generation 1</option>
         <option value="2">Generation 2</option>
         <option value="3">Generation 3</option>
@@ -58,25 +57,22 @@
 
       <button id="searchBtn">Search</button>
     </div>
+    <div id="pokemon-list"></div>
 
     <div id="pokemonModal" class="hidden">
-      <div class="modal-content">
+      <div>
         <button id="closeModalBtn">Close</button>
-
         <h2 id="modalName"></h2>
         <img id="modalImage" src="" alt="" />
-
         <p><strong>Height:</strong> <span id="modalHeight"></span></p>
         <p><strong>Weight:</strong> <span id="modalWeight"></span></p>
-
         <h3>Abilities</h3>
         <ul id="modalAbilities"></ul>
-
         <h3>Stats</h3>
         <ul id="modalStats"></ul>
       </div>
     </div>
 
-    <script type="module" src="./js/modal.js"></script>
+    <script type="module" src="./js/pokedex.js"></script>
   </body>
 </html>
