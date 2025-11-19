@@ -19,17 +19,18 @@ export function renderPokemonList(pokemonArray) {
     imgEl.alt = pokemon.name;
     imgEl.onclick = () => openModal(pokemon);
 
-    // Tyypit
+    // Tyypit (ikonit)
     const typesEl = document.createElement("div");
     typesEl.classList.add("types");
 
     pokemon.types.forEach((type) => {
       const icon = document.createElement("img");
-      icon.src = `images/types/${type}.png`;
+      icon.src = `images/types/${type}.png`; // Muista kansio
       icon.alt = type;
       typesEl.appendChild(icon);
     });
 
+    // Cardin sisältö
     card.appendChild(imgEl);
     card.appendChild(nameEl);
     card.appendChild(typesEl);

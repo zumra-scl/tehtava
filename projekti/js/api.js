@@ -16,8 +16,11 @@ export async function fetchGeneration(gen) {
 // Hakee yhden Pokémonin tiedot
 export async function fetchPokemon(url) {
   try {
-    const response = await fetch(url);
+    const pokemonUrl = url.replace("-species", "");
+
+    const response = await fetch(pokemonUrl);
     const data = await response.json();
+
     return {
       name: data.name,
       image:
@@ -27,7 +30,10 @@ export async function fetchPokemon(url) {
       height: data.height,
       weight: data.weight,
       abilities: data.abilities.map((a) => a.ability.name),
-      stats: data.stats.map((s) => ({ name: s.stat.name, value: s.base_stat })),
+      stats: data.stats.map((s) => ({
+        name: s.stat.name,
+        value: s.base_stat,
+      })),
     };
   } catch (error) {
     console.error("Error fetching Pokémon:", error);

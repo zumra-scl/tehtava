@@ -11,26 +11,71 @@
 
   <body>
     <div class="border">
-      <div class="header">
-        <h1>What Pokémon are you looking for?</h1>
-      </div>
-
       <div class="grid">
-        <div class="grid-btn pokedex"></div>
+        <div class="header">
+          <h1>what pokemon are you looking for?</h1>
+          <img src="./images/pokemon.png" alt="">
+    </div>
+      <div class="grid-btn pokedex"></div>
+    <div id="pokemon-container"></div>
+    <input type="text" id="search-name" placeholder="Search by name" />
+    <div class="buttons">
+    <select id="search-type">
+      <option value="">All types</option>
+      <option value="grass">grass</option>
+      <option value="fire">fire</option>
+      <option value="water">water</option>
+      <option value="normal">normal</option>
+      <option value="bug">bug</option>
+      <option value="poison">poison</option>
+      <option value="dark">dark</option>
+      <option value="psychic">psychic</option>
+      <option value="fairy">fairy</option>
+      <option value="figting">fighting</option>
+      <option value="ghost">ghost</option>
+      <option value="dragon">dragon</option>
+      <option value="electric">electric</option>
+      <option value="steel">steel</option>
+      <option value="rock">rock</option>
+      <option value="flying">flying</option>
+      <option value="ground">ground</option>
+      <option value="ice">ice</option>
+    </select>
+    <button id="search-btn">Search</button>
 
-        <div id="pokemon-container"></div>
+    <select id="generation-select">
+        <option value="1">Generation 1</option>
+        <option value="2">Generation 2</option>
+        <option value="3">Generation 3</option>
+        <option value="4">Generation 4</option>
+        <option value="5">Generation 5</option>
+      </select>
 
-        <input type="text" id="search-name" placeholder="Search by name" />
+      <button id="searchBtn">Search</button>
+    </div>
 
-        <select id="search-type">
-          <option value="">All types</option>
-          <option value="grass">Grass</option>
-          <option value="fire">Fire</option>
-          <option value="water">Water</option>
-        </select>
+    <div id="pokemonModal" class="hidden">
+      <div>
+        <button id="closeModalBtn">Close</button>
 
-        <button id="search-btn">Search</button>
+        <h2 id="modalName"></h2>
+        <img id="modalImage" src="" alt="" />
+
+        <p><strong>Height:</strong> <span id="modalHeight"></span></p>
+        <p><strong>Weight:</strong> <span id="modalWeight"></span></p>
+
+        <h3>Abilities</h3>
+        <ul id="modalAbilities"></ul>
+
+        <h3>Stats</h3>
+        <ul id="modalStats"></ul>
+
+      <button id="searchBtn">Search</button>
       </div>
+      
+      </div>
+    </div>
+    </div>
     </div>
   </body>
 </html>
