@@ -4,37 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <script type="module" src="./js/pokedex.js"></script>
-
-    <style>
-      .header {
-        padding: 2.5rem 1.25rem;
-        text-align: center-left;
-      }
-    </style>
   </head>
 
   <body>
-    <div class="grid">
-      <div class="grid-btn pokedex"></div>
-
+    <div class="border">
       <div class="header">
         <h1>What Pokémon are you looking for?</h1>
       </div>
 
-      <div id="pokemon-container"></div>
+      <div class="grid">
+        <div class="grid-btn pokedex"></div>
 
-      <input type="text" id="search-name" placeholder="Search by name" />
+        <div id="pokemon-container"></div>
 
-      <select id="search-type">
-        <option value="">All types</option>
-        <option value="grass">Grass</option>
-        <option value="fire">Fire</option>
-        <option value="water">Water</option>
-      </select>
+        <input type="text" id="search-name" placeholder="Search by name" />
 
-      <button id="search-btn">Search</button>
+        <select id="search-type">
+          <option value="">All types</option>
+          <option value="grass">Grass</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+        </select>
+
+        <button id="search-btn">Search</button>
+      </div>
     </div>
   </body>
 </html>
