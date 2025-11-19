@@ -12,6 +12,10 @@
         padding: 2.5rem 1.25rem;
         text-align: center-left;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
 
@@ -23,18 +27,47 @@
         <h1>What Pokémon are you looking for?</h1>
       </div>
 
-      <div id="pokemon-container"></div>
+      <div id="pokemon-list"></div>
+      <input type="text" id="searchInput" placeholder="Search by name" />
 
-      <input type="text" id="search-name" placeholder="Search by name" />
-
-      <select id="search-type">
+      <select id="typeFilter">
         <option value="">All types</option>
         <option value="grass">Grass</option>
         <option value="fire">Fire</option>
         <option value="water">Water</option>
+        <option value="electric">Electric</option>
+        <option value="normal">Normal</option>
+        <option value="bug">Bug</option>
+        <option value="psychic">Psychic</option>
       </select>
 
-      <button id="search-btn">Search</button>
+      <select id="generation-select">
+        <option value="1">Generation 1</option>
+        <option value="2">Generation 2</option>
+        <option value="3">Generation 3</option>
+        <option value="4">Generation 4</option>
+        <option value="5">Generation 5</option>
+      </select>
+
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="pokemonModal" class="hidden">
+      <div>
+        <button id="closeModalBtn">Close</button>
+
+        <h2 id="modalName"></h2>
+        <img id="modalImage" src="" alt="" />
+
+        <p><strong>Height:</strong> <span id="modalHeight"></span></p>
+        <p><strong>Weight:</strong> <span id="modalWeight"></span></p>
+
+        <h3>Abilities</h3>
+        <ul id="modalAbilities"></ul>
+
+        <h3>Stats</h3>
+        <ul id="modalStats"></ul>
+      </div>
     </div>
   </body>
 </html>

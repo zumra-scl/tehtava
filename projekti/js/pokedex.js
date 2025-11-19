@@ -1,6 +1,6 @@
 import { fetchGeneration, fetchPokemon } from "./api.js";
-import { openModal } from "./modal.js";
 import { renderPokemonList } from "./render.js";
+
 let currentPokemonList = [];
 
 export function setPokemonList(list) {
@@ -13,7 +13,6 @@ export function filterPokemon(searchText, selectedType) {
 
   const filtered = currentPokemonList.filter((pokemon) => {
     const matchesName = pokemon.name.toLowerCase().includes(searchText);
-
     const matchesType =
       selectedType === "" || pokemon.types.includes(selectedType);
 
@@ -22,3 +21,22 @@ export function filterPokemon(searchText, selectedType) {
 
   renderPokemonList(filtered);
 }
+
+document
+  .getElementById("generation-select")
+  .addEventListener("change", async (e) => {
+    const gen = e.target.value;
+
+    // 1. Hae generaatio
+    const speciesList = await fetchGeneration(gen);
+
+    // 2. Hae Pokémon-data
+    const pokemonData = [];
+    for (const p of speciesList) {
+      const info = await fetchPokemon(p.url);
+      if (info) pokemonData.push(info);
+    }
+
+    setPokemonList(pokemonData);
+    renderPokemonList(pokemonData);
+  });
