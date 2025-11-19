@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title> pokedex </title>
-    <script type="module" src="./js/pokedex.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
 
+    <script type="module" src="./js/pokedex.js"></script>
 
     <style>
       .header {
         padding: 2.5rem 1.25rem;
         text-align: center-left;
-      }  
-      
+      }
+
+      .hidden {
+        display: none;
+      }
     </style>
- 
   </head>
 
   <body>
     <div class="grid">
-    <div class="grid-btn pokedex">pokedex</div>
+      <div class="grid-btn pokedex"></div>
 
-  </div>
+      <div class="header">
+        <h1>What Pokémon are you looking for?</h1>
+      </div>
 
     <div class="header"
     <h1>what pokemon are you looking for?</h1>
@@ -31,24 +35,9 @@
     <input type="text" id="search-name" placeholder="Search by name" />
     <select id="search-type">
       <option value="">All types</option>
-      <option value="grass">grass</option>
-      <option value="fire">fire</option>
-      <option value="water">water</option>
-      <option value="normal">normal</option>
-      <option value="bug">bug</option>
-      <option value="poison">poison</option>
-      <option value="dark">dark</option>
-      <option value="psychic">psychic</option>
-      <option value="fairy">fairy</option>
-      <option value="figting">fighting</option>
-      <option value="ghost">ghost</option>
-      <option value="dragon">dragon</option>
-      <option value="electric">electric</option>
-      <option value="steel">steel</option>
-      <option value="rock">rock</option>
-      <option value="flying">flying</option>
-      <option value="ground">ground</option>
-      <option value="ice">ice</option>
+      <option value="grass">Grass</option>
+      <option value="fire">Fire</option>
+      <option value="water">Water</option>
     </select>
     <button id="search-btn">Search</button>
 
