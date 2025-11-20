@@ -5,17 +5,18 @@ import { openModal } from "./modal.js";
 let currentPokemonList = [];
 
 export function setPokemonList(list) {
-  currentPokemonList = list;
+  currentPokemonList = list ?? [];
 }
 
 export function filterPokemon(searchText, selectedType) {
   searchText = searchText.toLowerCase();
 
   const filtered = currentPokemonList.filter((pokemon) => {
-    const matchesName = pokemon.name.toLowerCase().includes(searchText);
+    const name = pokemon?.name?.toLowerCase() ?? "";
+    const matchesName = name.includes(searchText);
+    const pokemonTypes = pokemon?.types ?? [];
     const matchesType =
-      selectedType === "" || pokemon.types.includes(selectedType);
-
+      selectedType === "" || pokemonTypes.includes(selectedType);
     return matchesName && matchesType;
   });
 
@@ -26,13 +27,12 @@ document
   .getElementById("generationSelect")
   .addEventListener("change", async (e) => {
     const gen = e.target.value;
-
     const speciesList = await fetchGeneration(gen);
     const pokemonData = [];
 
     for (const p of speciesList) {
       const info = await fetchPokemon(p.url);
-      if (info) pokemonData.push(info);
+      if (info?.name) pokemonData.push(info);
     }
 
     setPokemonList(pokemonData);
@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   for (const p of speciesList) {
     const info = await fetchPokemon(p.url);
-    if (info) pokemonData.push(info);
+    if (info?.name) pokemonData.push(info);
   }
 
   setPokemonList(pokemonData);
