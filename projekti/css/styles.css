@@ -166,11 +166,17 @@ body {
   }
 }
 
+body {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
 footer {
-  margin-top: auto;
-  background: #6ae3f0;
+  background: #ffb300;
   color: #d6006f;
-  text-align: left;
-  padding: 0.01rem;
-  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
 }
