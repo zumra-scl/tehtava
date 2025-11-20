@@ -165,3 +165,12 @@ body {
     height: auto;
   }
 }
+
+footer {
+  margin-top: auto;
+  background: #6ae3f0;
+  color: #d6006f;
+  text-align: left;
+  padding: 0.01rem;
+  font-size: 0.9rem;
+}
