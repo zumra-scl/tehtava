@@ -25,7 +25,7 @@ export function renderPokemonList(pokemonArray) {
 
     pokemon.types.forEach((type) => {
       const icon = document.createElement("img");
-      icon.src = `images/types/${type}.svg`;
+      icon.src = `./images/typeicons/${type}.svg`;
       icon.alt = type;
       typesEl.appendChild(icon);
     });
