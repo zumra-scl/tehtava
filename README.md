@@ -1,6 +1,4 @@
 # tehtava
 
 ryhmäprojekti
-
-Lisätty tekstiä
-yesss
+Pokedex sivusto
