@@ -22,7 +22,6 @@ export function renderPokemonList(pokemonArray) {
     // Tyypit (ikonit)
     const typesEl = document.createElement("div");
     typesEl.classList.add("types");
-
     pokemon.types.forEach((type) => {
       const icon = document.createElement("img");
       icon.src = `./images/typeicons/${type}.svg`;
@@ -30,11 +29,39 @@ export function renderPokemonList(pokemonArray) {
       typesEl.appendChild(icon);
     });
 
-    // Cardin sisältö
+    const favBtn = document.createElement("button");
+    favBtn.textContent = "Add to favorites";
+    favBtn.classList.add("fav-btn");
+    favBtn.onclick = () => {
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      if (!favorites.find((p) => p.name === pokemon.name)) {
+        favorites.push(pokemon);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert(`${pokemon.name} added to favorites!`);
+      } else {
+        alert(`${pokemon.name} already in favorites!`);
+      }
+    };
+
     card.appendChild(imgEl);
     card.appendChild(nameEl);
     card.appendChild(typesEl);
+    card.appendChild(favBtn);
 
     container.appendChild(card);
   });
 }
+window.addEventListener("DOMContentLoaded", () => {
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  renderPokemonList(favorites);
+
+  const clearBtn = document.getElementById("clearFavoritesBtn");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Clear all?")) {
+        localStorage.removeItem("favorites");
+        renderPokemonList([]);
+      }
+    });
+  }
+});
