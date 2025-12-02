@@ -72,3 +72,32 @@ document.getElementById("typeFilter").addEventListener("change", () => {
   const selectedType = document.getElementById("typeFilter").value;
   filterPokemon(searchValue, selectedType);
 });
+
+async function loadGeneration(gen) {
+  const speciesList = await fetchGeneration(gen);
+  const pokemonData = [];
+
+  for (const p of speciesList) {
+    const info = await fetchPokemon(p.url);
+    if (info?.name) pokemonData.push(info);
+  }
+
+  setPokemonList(pokemonData);
+  renderPokemonList(pokemonData.slice(0, 20));
+}
+
+async function initialLoad() {
+  const defaultGen = "1";
+  const speciesList = await fetchGeneration(defaultGen);
+  const pokemonData = [];
+
+  for (const p of speciesList) {
+    const info = await fetchPokemon(p.url);
+    if (info?.name) pokemonData.push(info);
+  }
+
+  setPokemonList(pokemonData);
+  renderPokemonList(pokemonData.slice(0, 20));
+}
+
+window.addEventListener("DOMContentLoaded", initialLoad);
