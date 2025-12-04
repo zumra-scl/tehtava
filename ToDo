@@ -144,7 +144,7 @@ modal.js – Chioma
 
 ---
 
-pokedex.js – Lia & Chioma
+pokedex.js – Chioma
 
 - Handle UI events (search, dropdown, type filter)
 - Call API + render functions

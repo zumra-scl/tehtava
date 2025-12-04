@@ -23,34 +23,38 @@ export function filterPokemon(searchText, selectedType) {
   renderPokemonList(filtered);
 }
 
-document
-  .getElementById("generationSelect")
-  .addEventListener("change", async (e) => {
-    const gen = e.target.value;
-    const speciesList = await fetchGeneration(gen);
-    const pokemonData = [];
+async function loadGenerationFast(gen) {
+  const speciesList = await fetchGeneration(gen);
 
-    for (const p of speciesList) {
-      const info = await fetchPokemon(p.url);
-      if (info?.name) pokemonData.push(info);
-    }
+  const first20 = speciesList.slice(0, 20);
+  const fastData = [];
 
-    setPokemonList(pokemonData);
-    renderPokemonList(pokemonData.slice(0, 20));
-  });
-
-window.addEventListener("DOMContentLoaded", async () => {
-  const defaultGen = "1";
-  const speciesList = await fetchGeneration(defaultGen);
-  const pokemonData = [];
-
-  for (const p of speciesList) {
+  for (const p of first20) {
     const info = await fetchPokemon(p.url);
-    if (info?.name) pokemonData.push(info);
+    if (info?.name) fastData.push(info);
   }
 
-  setPokemonList(pokemonData);
-  renderPokemonList(pokemonData.slice(0, 20));
+  renderPokemonList(fastData);
+
+  const allData = [...fastData];
+  const rest = speciesList.slice(20);
+
+  for (const p of rest) {
+    const info = await fetchPokemon(p.url);
+    if (info?.name) allData.push(info);
+  }
+
+  setPokemonList(allData);
+}
+
+async function initialLoad() {
+  await loadGenerationFast("1");
+}
+
+window.addEventListener("DOMContentLoaded", initialLoad);
+
+document.getElementById("generationSelect").addEventListener("change", (e) => {
+  loadGenerationFast(e.target.value);
 });
 
 document.getElementById("searchBtn").addEventListener("click", () => {
@@ -72,32 +76,3 @@ document.getElementById("typeFilter").addEventListener("change", () => {
   const selectedType = document.getElementById("typeFilter").value;
   filterPokemon(searchValue, selectedType);
 });
-
-async function loadGeneration(gen) {
-  const speciesList = await fetchGeneration(gen);
-  const pokemonData = [];
-
-  for (const p of speciesList) {
-    const info = await fetchPokemon(p.url);
-    if (info?.name) pokemonData.push(info);
-  }
-
-  setPokemonList(pokemonData);
-  renderPokemonList(pokemonData.slice(0, 20));
-}
-
-async function initialLoad() {
-  const defaultGen = "1";
-  const speciesList = await fetchGeneration(defaultGen);
-  const pokemonData = [];
-
-  for (const p of speciesList) {
-    const info = await fetchPokemon(p.url);
-    if (info?.name) pokemonData.push(info);
-  }
-
-  setPokemonList(pokemonData);
-  renderPokemonList(pokemonData.slice(0, 20));
-}
-
-window.addEventListener("DOMContentLoaded", initialLoad);

@@ -108,9 +108,11 @@ body {
 }
 #pokemon-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  padding-left: 300px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  width: 100%;
+  padding: 20px 0;
 }
 #pokemon-list img {
   width: 300px;
