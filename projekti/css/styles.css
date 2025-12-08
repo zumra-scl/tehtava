@@ -115,7 +115,7 @@ body {
   padding: 20px 0;
 }
 #pokemon-list img {
-  width: 300px;
+  width: 270px;
   height: auto;
 }
 
@@ -229,7 +229,6 @@ footer {
 
 .pokemon-card {
   width: 230px;
-  height: 500px;
   background: #ffffff;
   border-radius: 55px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
